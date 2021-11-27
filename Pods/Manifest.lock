@@ -1,0 +1,20 @@
+PODS:
+  - ReactiveObjC (3.1.1)
+  - SSZipArchive (2.4.2)
+
+DEPENDENCIES:
+  - ReactiveObjC
+  - SSZipArchive
+
+SPEC REPOS:
+  trunk:
+    - ReactiveObjC
+    - SSZipArchive
+
+SPEC CHECKSUMS:
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SSZipArchive: e7b4f3d9e780c2acc1764cd88fbf2de28f26e5b2
+
+PODFILE CHECKSUM: b80ce4730423425ff2552103172275097c9b2133
+
+COCOAPODS: 1.11.2

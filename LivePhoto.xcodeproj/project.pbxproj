@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E066E464BC3ABCB4145418C /* Pods_LivePhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F0C6DC2F756767C0197066 /* Pods_LivePhoto.framework */; };
+		C8730E5B274F3618006117DC /* FileBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8730E5A274F3618006117DC /* FileBrowserVC.m */; };
+		C8730E5E274F38D3006117DC /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8730E5D274F38D3006117DC /* FileManager.m */; };
+		C8730E61274F5CDA006117DC /* TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C8730E60274F5CDA006117DC /* TreeNode.m */; };
+		C8730E64274F6CD1006117DC /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8730E63274F6CD1006117DC /* WebVC.m */; };
+		C8730E67274F7C0B006117DC /* PreviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8730E66274F7C0B006117DC /* PreviewVC.m */; };
+		C880E22827508329002F7F11 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = C880E22727508329002F7F11 /* Toast.m */; };
+		C8B3BCE4274780F800AACE2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3BCE3274780F800AACE2C /* AppDelegate.m */; };
+		C8B3BCE7274780F800AACE2C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3BCE6274780F800AACE2C /* SceneDelegate.m */; };
+		C8B3BCEA274780F800AACE2C /* ImageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3BCE9274780F800AACE2C /* ImageListViewController.m */; };
+		C8B3BCED274780F800AACE2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B3BCEB274780F800AACE2C /* Main.storyboard */; };
+		C8B3BCEF274780FA00AACE2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8B3BCEE274780FA00AACE2C /* Assets.xcassets */; };
+		C8B3BCF2274780FA00AACE2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8B3BCF0274780FA00AACE2C /* LaunchScreen.storyboard */; };
+		C8B3BCF5274780FA00AACE2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3BCF4274780FA00AACE2C /* main.m */; };
+		C8B3BCFD274788DD00AACE2C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3BCFC274788DD00AACE2C /* DetailViewController.m */; };
+		C8B3BD0027478BC000AACE2C /* ImagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B3BCFF27478BC000AACE2C /* ImagCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A49D647BC29C3FB8EC9F3A75 /* Pods-LivePhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhoto.debug.xcconfig"; path = "Target Support Files/Pods-LivePhoto/Pods-LivePhoto.debug.xcconfig"; sourceTree = "<group>"; };
+		C8730E59274F3618006117DC /* FileBrowserVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileBrowserVC.h; sourceTree = "<group>"; };
+		C8730E5A274F3618006117DC /* FileBrowserVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileBrowserVC.m; sourceTree = "<group>"; };
+		C8730E5C274F38D3006117DC /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		C8730E5D274F38D3006117DC /* FileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		C8730E5F274F5CDA006117DC /* TreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeNode.h; sourceTree = "<group>"; };
+		C8730E60274F5CDA006117DC /* TreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TreeNode.m; sourceTree = "<group>"; };
+		C8730E62274F6CD1006117DC /* WebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		C8730E63274F6CD1006117DC /* WebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
+		C8730E65274F7C0B006117DC /* PreviewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewVC.h; sourceTree = "<group>"; };
+		C8730E66274F7C0B006117DC /* PreviewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewVC.m; sourceTree = "<group>"; };
+		C880E22227506AF4002F7F11 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C880E22627508329002F7F11 /* Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toast.h; sourceTree = "<group>"; };
+		C880E22727508329002F7F11 /* Toast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Toast.m; sourceTree = "<group>"; };
+		C8B3BCDF274780F800AACE2C /* LivePhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8B3BCE2274780F800AACE2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C8B3BCE3274780F800AACE2C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C8B3BCE5274780F800AACE2C /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		C8B3BCE6274780F800AACE2C /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		C8B3BCE8274780F800AACE2C /* ImageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageListViewController.h; sourceTree = "<group>"; };
+		C8B3BCE9274780F800AACE2C /* ImageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageListViewController.m; sourceTree = "<group>"; };
+		C8B3BCEC274780F800AACE2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8B3BCEE274780FA00AACE2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8B3BCF1274780FA00AACE2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C8B3BCF3274780FA00AACE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8B3BCF4274780FA00AACE2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C8B3BCFB274788DD00AACE2C /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C8B3BCFC274788DD00AACE2C /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C8B3BCFE27478BC000AACE2C /* ImagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagCell.h; sourceTree = "<group>"; };
+		C8B3BCFF27478BC000AACE2C /* ImagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagCell.m; sourceTree = "<group>"; };
+		D8F0C6DC2F756767C0197066 /* Pods_LivePhoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivePhoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6EDA4920C1096FFB60DE96 /* Pods-LivePhoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhoto.release.xcconfig"; path = "Target Support Files/Pods-LivePhoto/Pods-LivePhoto.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C8B3BCDC274780F800AACE2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E066E464BC3ABCB4145418C /* Pods_LivePhoto.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		042CEB0A5879E26FCF47ED73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A49D647BC29C3FB8EC9F3A75 /* Pods-LivePhoto.debug.xcconfig */,
+				FD6EDA4920C1096FFB60DE96 /* Pods-LivePhoto.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		17BDAC5265CD6F3338C19454 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8F0C6DC2F756767C0197066 /* Pods_LivePhoto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C880E22327508135002F7F11 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C8B3BCE2274780F800AACE2C /* AppDelegate.h */,
+				C8B3BCE3274780F800AACE2C /* AppDelegate.m */,
+				C8B3BCE5274780F800AACE2C /* SceneDelegate.h */,
+				C8B3BCE6274780F800AACE2C /* SceneDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C880E22427508186002F7F11 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				C8B3BCE8274780F800AACE2C /* ImageListViewController.h */,
+				C8B3BCE9274780F800AACE2C /* ImageListViewController.m */,
+				C8B3BCFB274788DD00AACE2C /* DetailViewController.h */,
+				C8B3BCFC274788DD00AACE2C /* DetailViewController.m */,
+				C8B3BCFE27478BC000AACE2C /* ImagCell.h */,
+				C8B3BCFF27478BC000AACE2C /* ImagCell.m */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		C880E225275081BC002F7F11 /* FileBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				C8730E59274F3618006117DC /* FileBrowserVC.h */,
+				C8730E5A274F3618006117DC /* FileBrowserVC.m */,
+				C8730E65274F7C0B006117DC /* PreviewVC.h */,
+				C8730E66274F7C0B006117DC /* PreviewVC.m */,
+				C8730E62274F6CD1006117DC /* WebVC.h */,
+				C8730E63274F6CD1006117DC /* WebVC.m */,
+				C8730E5C274F38D3006117DC /* FileManager.h */,
+				C8730E5D274F38D3006117DC /* FileManager.m */,
+				C8730E5F274F5CDA006117DC /* TreeNode.h */,
+				C8730E60274F5CDA006117DC /* TreeNode.m */,
+			);
+			path = FileBrowser;
+			sourceTree = "<group>";
+		};
+		C880E2292750840D002F7F11 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C880E22627508329002F7F11 /* Toast.h */,
+				C880E22727508329002F7F11 /* Toast.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		C8B3BCD6274780F800AACE2C = {
+			isa = PBXGroup;
+			children = (
+				C8B3BCE1274780F800AACE2C /* LivePhoto */,
+				C8B3BCE0274780F800AACE2C /* Products */,
+				042CEB0A5879E26FCF47ED73 /* Pods */,
+				17BDAC5265CD6F3338C19454 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C8B3BCE0274780F800AACE2C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C8B3BCDF274780F800AACE2C /* LivePhoto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8B3BCE1274780F800AACE2C /* LivePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				C880E22327508135002F7F11 /* App */,
+				C880E22427508186002F7F11 /* Photos */,
+				C880E225275081BC002F7F11 /* FileBrowser */,
+				C880E2292750840D002F7F11 /* Tools */,
+				C8B3BCEB274780F800AACE2C /* Main.storyboard */,
+				C8B3BCEE274780FA00AACE2C /* Assets.xcassets */,
+				C8B3BCF0274780FA00AACE2C /* LaunchScreen.storyboard */,
+				C8B3BCF3274780FA00AACE2C /* Info.plist */,
+				C8B3BCF4274780FA00AACE2C /* main.m */,
+				C880E22227506AF4002F7F11 /* PrefixHeader.pch */,
+			);
+			path = LivePhoto;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C8B3BCDE274780F800AACE2C /* LivePhoto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8B3BCF8274780FA00AACE2C /* Build configuration list for PBXNativeTarget "LivePhoto" */;
+			buildPhases = (
+				C2ECC5111AC8DA89037A6E1E /* [CP] Check Pods Manifest.lock */,
+				C8B3BCDB274780F800AACE2C /* Sources */,
+				C8B3BCDC274780F800AACE2C /* Frameworks */,
+				C8B3BCDD274780F800AACE2C /* Resources */,
+				1E9F36291DA0ECFEFA578236 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LivePhoto;
+			productName = LivePhoto;
+			productReference = C8B3BCDF274780F800AACE2C /* LivePhoto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C8B3BCD7274780F800AACE2C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					C8B3BCDE274780F800AACE2C = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = C8B3BCDA274780F800AACE2C /* Build configuration list for PBXProject "LivePhoto" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C8B3BCD6274780F800AACE2C;
+			productRefGroup = C8B3BCE0274780F800AACE2C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C8B3BCDE274780F800AACE2C /* LivePhoto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C8B3BCDD274780F800AACE2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8B3BCF2274780FA00AACE2C /* LaunchScreen.storyboard in Resources */,
+				C8B3BCEF274780FA00AACE2C /* Assets.xcassets in Resources */,
+				C8B3BCED274780F800AACE2C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E9F36291DA0ECFEFA578236 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LivePhoto/Pods-LivePhoto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LivePhoto/Pods-LivePhoto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LivePhoto/Pods-LivePhoto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2ECC5111AC8DA89037A6E1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LivePhoto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C8B3BCDB274780F800AACE2C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8B3BCFD274788DD00AACE2C /* DetailViewController.m in Sources */,
+				C8B3BD0027478BC000AACE2C /* ImagCell.m in Sources */,
+				C8730E64274F6CD1006117DC /* WebVC.m in Sources */,
+				C8B3BCEA274780F800AACE2C /* ImageListViewController.m in Sources */,
+				C8B3BCE4274780F800AACE2C /* AppDelegate.m in Sources */,
+				C8730E67274F7C0B006117DC /* PreviewVC.m in Sources */,
+				C8730E61274F5CDA006117DC /* TreeNode.m in Sources */,
+				C8B3BCF5274780FA00AACE2C /* main.m in Sources */,
+				C8B3BCE7274780F800AACE2C /* SceneDelegate.m in Sources */,
+				C880E22827508329002F7F11 /* Toast.m in Sources */,
+				C8730E5B274F3618006117DC /* FileBrowserVC.m in Sources */,
+				C8730E5E274F38D3006117DC /* FileManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C8B3BCEB274780F800AACE2C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8B3BCEC274780F800AACE2C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C8B3BCF0274780FA00AACE2C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8B3BCF1274780FA00AACE2C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C8B3BCF6274780FA00AACE2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C8B3BCF7274780FA00AACE2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C8B3BCF9274780FA00AACE2C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A49D647BC29C3FB8EC9F3A75 /* Pods-LivePhoto.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85GDEX4F59;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LivePhoto/PrefixHeader.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LivePhoto/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用您的相机";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "需要使用您的麦克风播放视频";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要访问您的相册";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hjs.LivePhoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C8B3BCFA274780FA00AACE2C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6EDA4920C1096FFB60DE96 /* Pods-LivePhoto.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85GDEX4F59;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LivePhoto/PrefixHeader.pch";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LivePhoto/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要使用您的相机";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "需要使用您的麦克风播放视频";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "需要访问您的相册";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hjs.LivePhoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C8B3BCDA274780F800AACE2C /* Build configuration list for PBXProject "LivePhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8B3BCF6274780FA00AACE2C /* Debug */,
+				C8B3BCF7274780FA00AACE2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8B3BCF8274780FA00AACE2C /* Build configuration list for PBXNativeTarget "LivePhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8B3BCF9274780FA00AACE2C /* Debug */,
+				C8B3BCFA274780FA00AACE2C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C8B3BCD7274780F800AACE2C /* Project object */;
+}
