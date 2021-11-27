@@ -46,7 +46,7 @@ https://developer.apple.com/design/human-interface-guidelines/live-photos/overvi
 
 百度网盘及阿里云盘详细对比如下：
 
-![image-20211127142129890](/Users/ugreen/Library/Application Support/typora-user-images/image-20211127142129890.png)
+![image-20211127142129890](http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/marketPreview.png)
 
 
 
@@ -113,7 +113,7 @@ Live Photo 必要的两个资源文件：图片和视频。
 
 demo效果：
 
-<video src="/Users/ugreen/Downloads/RPReplay_Final1637997914.MP4"></video>
+<video src="http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/demoReview.MP4"></video>
 
 
 
