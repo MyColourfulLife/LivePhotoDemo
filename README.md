@@ -111,7 +111,7 @@ Live Photo 必要的两个资源文件：图片和视频。
 
 
 
-demo效果：
+[demo效果]:http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/demoReview.MP4
 
 <video src="http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/demoReview.MP4"></video>
 
@@ -148,32 +148,4 @@ Demo 至少包含了以下主要操作：
 
 
 .live 是我们约定的 live photo 资源格式，server在收到 .live格式的文件后，要认为它是一个图片，是一种 live photo的图片，需要为其生成缩略图。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
