@@ -111,7 +111,7 @@ Live Photo 必要的两个资源文件：图片和视频。
 
 
 
-[demo效果]:http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/demoReview.MP4
+demo效果:http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/demoReview.MP4
 
 <video src="http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/demoReview.MP4"></video>
 
