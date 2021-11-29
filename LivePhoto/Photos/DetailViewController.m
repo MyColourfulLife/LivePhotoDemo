@@ -32,19 +32,18 @@
         self.toolbarItems = @[saveOutItem];
     }
     
-    CGFloat scale = UIScreen.mainScreen.scale;
-    CGSize size = self.imageView.bounds.size;
-    CGSize targetSize = CGSizeMake(size.width * scale, size.height * scale);
-    
     if (self.asset.mediaSubtypes & PHAssetMediaSubtypePhotoLive) {
         PHLivePhotoRequestOptions *options = PHLivePhotoRequestOptions.new;
         options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
         options.networkAccessAllowed = YES;
+        //即便如此，也不能保证我们生成的livephoto和图库原来的一摸一样
+        options.version = PHImageRequestOptionsVersionCurrent;
+        
 //        options.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
 //            NSLog(@"进度:%f",progress);
 //        };
         
-        [PHImageManager.defaultManager requestLivePhotoForAsset:self.asset targetSize:targetSize contentMode:PHImageContentModeAspectFill options:options resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nullable info) {
+        [PHImageManager.defaultManager requestLivePhotoForAsset:self.asset targetSize:CGSizeMake(self.asset.pixelWidth, self.asset.pixelHeight) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nullable info) {
             self.livePhotoView.livePhoto = livePhoto;
             self.livePhotoView.hidden = NO;
             self.imageView.hidden = YES;
@@ -52,9 +51,10 @@
     }else {
         PHImageRequestOptions *options = PHImageRequestOptions.new;
         options.networkAccessAllowed = YES;
+        options.version = PHImageRequestOptionsVersionCurrent;
         options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
         
-        [PHImageManager.defaultManager requestImageForAsset:self.asset targetSize:targetSize contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        [PHImageManager.defaultManager requestImageForAsset:self.asset targetSize:CGSizeMake(self.asset.pixelWidth, self.asset.pixelHeight) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
             self.imageView.image = result;
             self.imageView.hidden = NO;
             self.livePhotoView.hidden = YES;
@@ -104,7 +104,16 @@
 
 
 - (void)saveOutAsset {
-    RACSignal<PHAssetResource *> * signal = [PHAssetResource assetResourcesForAsset:self.asset].rac_sequence.signal;
+    RACSignal<PHAssetResource *> * signal = nil;
+    
+    if (self.asset.mediaSubtypes & PHAssetMediaSubtypePhotoLive) {
+        // 这是我们自己生成的livepohto当中的资源，除非从系统图库中选择livephoto，否则我们生成的 根 图库里面的会有些许差异，大小 尺寸 上的差异，体现在缩略图,及像素宽高上。直接从asset获取的原始的图片和视频，不一定是图库中livephoto的尺寸，通常要更大更清晰。
+        // 通过livephoto获取的资源，不会有多余的资源。而通过asset获取的资源，包含很多不需要的资源，需要在下个环节过滤。
+        signal = [PHAssetResource assetResourcesForLivePhoto:self.livePhotoView.livePhoto].rac_sequence.signal;
+        
+    }else {
+        signal = [PHAssetResource assetResourcesForAsset:self.asset].rac_sequence.signal;
+    }
     
     // 1.过滤
     if (self.asset.mediaSubtypes & PHAssetMediaSubtypePhotoLive) {
