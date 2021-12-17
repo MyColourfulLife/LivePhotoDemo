@@ -37,17 +37,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-/// 获取指定目录下的文件列表
+/// 获取指定目录下的文件列表,默认跳过隐藏文件
 /// @param fileURL 文件目录
 + (NSArray <NSURL *>*)fileContentsOfFileURL:(NSURL *)fileURL;
 
-
++ (NSArray <NSURL *>*)fileContentsOfFileURL:(NSURL *)fileURL options:(NSDirectoryEnumerationOptions) options;
 + (BOOL)copyFile:(NSURL *)source toURL:(NSURL *)des;
 
 + (BOOL)removeAtPath:(NSString *)filePath;
 
 
 + (BOOL)createZipFileAtPath:(NSString *)path withContentsOfDirectory:(NSString *)directoryPath;
+
+
+/// 使文件隐藏，通过修改文件名实现
+/// @param fileURL 要隐藏的文件
++ (BOOL)hiddenFileURL:(NSURL *)fileURL;
+
+
+/// 将文件移动到临时目录，并且取消隐藏
+/// @param fileURL 要移动到临时目录到文件
++ (NSURL *)copyToThenUnHideTempURL:(NSURL *)fileURL;
 
 @end
 

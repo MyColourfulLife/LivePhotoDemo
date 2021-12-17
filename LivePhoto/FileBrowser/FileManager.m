@@ -79,8 +79,13 @@
 }
 
 + (NSArray <NSURL *>*)fileContentsOfFileURL:(NSURL *)fileURL {
+    return [self fileContentsOfFileURL:fileURL options:NSDirectoryEnumerationSkipsHiddenFiles|NSDirectoryEnumerationSkipsSubdirectoryDescendants];
+}
+
++ (NSArray <NSURL *>*)fileContentsOfFileURL:(NSURL *)fileURL
+                                    options:(NSDirectoryEnumerationOptions) options {
     NSError *error;
-    NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:fileURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles|NSDirectoryEnumerationSkipsSubdirectoryDescendants error:&error];
+    NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:fileURL includingPropertiesForKeys:nil options:options error:&error];
     if (error) {
         NSLog(@"错误:%@",error);
         return nil;
@@ -116,6 +121,37 @@
 
 + (BOOL)createZipFileAtPath:(NSString *)path withContentsOfDirectory:(NSString *)directoryPath {
     return [SSZipArchive createZipFileAtPath:path withContentsOfDirectory:directoryPath];
+}
+
+
++ (BOOL)hiddenFileURL:(NSURL *)fileURL {
+    if (!fileURL) {
+        return NO;
+    }
+    NSURL *destURL = [fileURL URLByDeletingLastPathComponent];
+    destURL = [destURL URLByAppendingPathComponent:[NSString stringWithFormat:@".%@",fileURL.lastPathComponent]];
+    NSError *error;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:destURL.path]) {
+        [[NSFileManager defaultManager] removeItemAtURL:destURL error:nil];
+    }
+    BOOL ret = [[NSFileManager defaultManager] moveItemAtURL:fileURL toURL:destURL error:&error];
+    if (error) {
+        NSLog(@"错误:%@",error);
+    }
+    return ret;
+}
+
++ (NSURL *)copyToThenUnHideTempURL:(NSURL *)fileURL {
+    NSString *lastPath = [fileURL lastPathComponent];
+    if ([lastPath hasPrefix:@"."]) {
+        lastPath = [lastPath substringFromIndex:1];
+    }
+   NSString *tempStr = [NSTemporaryDirectory() stringByAppendingFormat:@"/%@",lastPath];
+    NSURL* toURL = [NSURL fileURLWithPath:tempStr];
+    if ([self copyFile:fileURL toURL:toURL]){
+        return toURL;
+    };
+    return nil;
 }
 
 @end

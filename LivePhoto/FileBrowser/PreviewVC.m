@@ -41,6 +41,8 @@
     }
     
     if (self.node.fileType == FILETYPE_LIVE) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveToAlubum)];
+        
         PHLivePhotoView *liveView = [[PHLivePhotoView alloc] init];
         [self.view addSubview:liveView];
         liveView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -57,8 +59,9 @@
         targetSize.width = targetSize.width * UIScreen.mainScreen.scale;
         targetSize.height = targetSize.height * UIScreen.mainScreen.scale;
         
-        
-        [PHLivePhoto requestLivePhotoWithResourceFileURLs:self.node.liveResource placeholderImage:nil targetSize:targetSize contentMode:PHImageContentModeAspectFit resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
+        // 临时用一下
+       NSArray *resouces = [FileManager fileContentsOfFileURL:[self.node.liveResource.firstObject URLByDeletingLastPathComponent]  options:NSDirectoryEnumerationSkipsSubdirectoryDescendants];
+        [PHLivePhoto requestLivePhotoWithResourceFileURLs:resouces placeholderImage:nil targetSize:targetSize contentMode:PHImageContentModeAspectFit resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nonnull info) {
             liveView.livePhoto = livePhoto;
         }];
         
@@ -105,6 +108,33 @@
         [webVC.view.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
     ]];
     
+}
+
+- (void)saveToAlubum{
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        NSArray<NSURL *> *resouces = [FileManager fileContentsOfFileURL:[self.node.liveResource.firstObject URLByDeletingLastPathComponent]  options:NSDirectoryEnumerationSkipsSubdirectoryDescendants];
+        PHAssetCreationRequest *request = [PHAssetCreationRequest creationRequestForAsset];
+        
+        for (NSURL *fileURL in resouces) {
+            if ([fileURL.pathExtension.uppercaseString isEqualToString:@"MOV"]) {
+                PHAssetResourceCreationOptions *options = PHAssetResourceCreationOptions.new;
+                options.shouldMoveFile = YES;
+               NSURL *tempURL = [FileManager copyToThenUnHideTempURL:fileURL];
+                [request addResourceWithType:PHAssetResourceTypePairedVideo fileURL:tempURL options:options];
+            }else {
+                PHAssetResourceCreationOptions *options = PHAssetResourceCreationOptions.new;
+                [request addResourceWithType:PHAssetResourceTypePhoto fileURL:fileURL options:options];
+            }
+        }
+        
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+            NSLog(@"保存结果:%d, error:%@",success, error);
+            if (success) {
+                [Toast showToast:@"保存成功"];
+            }else {
+                [Toast showToast:@"保存失败"];
+            }
+        }];
 }
 
 /*

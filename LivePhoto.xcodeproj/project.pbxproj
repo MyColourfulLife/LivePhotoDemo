@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E066E464BC3ABCB4145418C /* Pods_LivePhoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F0C6DC2F756767C0197066 /* Pods_LivePhoto.framework */; };
+		C81A27D0276C8B5A00450D92 /* AssetMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = C81A27CF276C8B5A00450D92 /* AssetMeta.m */; };
 		C8730E5B274F3618006117DC /* FileBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C8730E5A274F3618006117DC /* FileBrowserVC.m */; };
 		C8730E5E274F38D3006117DC /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C8730E5D274F38D3006117DC /* FileManager.m */; };
 		C8730E61274F5CDA006117DC /* TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C8730E60274F5CDA006117DC /* TreeNode.m */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		A49D647BC29C3FB8EC9F3A75 /* Pods-LivePhoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhoto.debug.xcconfig"; path = "Target Support Files/Pods-LivePhoto/Pods-LivePhoto.debug.xcconfig"; sourceTree = "<group>"; };
+		C81A27CE276C8B5A00450D92 /* AssetMeta.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssetMeta.h; sourceTree = "<group>"; };
+		C81A27CF276C8B5A00450D92 /* AssetMeta.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetMeta.m; sourceTree = "<group>"; };
 		C8730E59274F3618006117DC /* FileBrowserVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileBrowserVC.h; sourceTree = "<group>"; };
 		C8730E5A274F3618006117DC /* FileBrowserVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileBrowserVC.m; sourceTree = "<group>"; };
 		C8730E5C274F38D3006117DC /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				C8730E63274F6CD1006117DC /* WebVC.m */,
 				C8730E5C274F38D3006117DC /* FileManager.h */,
 				C8730E5D274F38D3006117DC /* FileManager.m */,
+				C81A27CE276C8B5A00450D92 /* AssetMeta.h */,
+				C81A27CF276C8B5A00450D92 /* AssetMeta.m */,
 				C8730E5F274F5CDA006117DC /* TreeNode.h */,
 				C8730E60274F5CDA006117DC /* TreeNode.m */,
 			);
@@ -290,6 +295,7 @@
 			files = (
 				C8B3BCFD274788DD00AACE2C /* DetailViewController.m in Sources */,
 				C8B3BD0027478BC000AACE2C /* ImagCell.m in Sources */,
+				C81A27D0276C8B5A00450D92 /* AssetMeta.m in Sources */,
 				C8730E64274F6CD1006117DC /* WebVC.m in Sources */,
 				C8B3BCEA274780F800AACE2C /* ImageListViewController.m in Sources */,
 				C8B3BCE4274780F800AACE2C /* AppDelegate.m in Sources */,

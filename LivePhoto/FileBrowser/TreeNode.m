@@ -8,8 +8,9 @@
 #import "TreeNode.h"
 #import "FileManager.h"
 #import <SSZipArchive.h>
+#import "AssetMeta.h"
 
-@interface TreeNode ()
+@interface TreeNode ()<SSZipArchiveDelegate>
 @property(nonatomic, copy) NSString *name;
 @property(nonatomic, copy) NSURL *fileURL;
 @property(nonatomic, copy) NSString *iconName;
@@ -59,6 +60,11 @@
         }else if ([TreeNode.ImgTypes containsObject:fileExtention]){
             self.iconName = @"photo";
             self.fileType = FILETYPE_IMG;
+            if ([AssetMeta isLivePhotoCheckBy:fileURL]){
+                NSLog(@"%@是live photo",fileURL.lastPathComponent);
+            }else {
+                NSLog(@"%@不是live photo",fileURL.lastPathComponent);
+            };
         }else if ([TreeNode.LiveTypes containsObject:fileExtention]){
             self.iconName = @"livephoto";
             self.fileType = FILETYPE_LIVE;
@@ -70,8 +76,8 @@
         self.childNodes = nil;
         if ([fileURL.pathExtension isEqualToString:@"live"]) {
           NSString *unzipPath =  [[FileManager liveResourceFolder] stringByAppendingFormat:@"/%@",fileURL.lastPathComponent];
-             [SSZipArchive unzipFileAtPath:fileURL.path toDestination:unzipPath];
-           self.liveResource = [FileManager fileContentsOfFileURL:[NSURL fileURLWithPath:unzipPath]];
+            // 设置代理，隐藏视频文件
+            [SSZipArchive unzipFileAtPath:fileURL.path toDestination:unzipPath delegate:self];
         }
         return;
     }
@@ -95,7 +101,24 @@
 }
 
 
+// 隐藏过早，会导致 SSZipArchive 无法设置修改属性
+//- (void)zipArchiveDidUnzipFileAtIndex:(NSInteger)fileIndex totalFiles:(NSInteger)totalFiles archivePath:(NSString *)archivePath unzippedFilePath:(NSString *)unzippedFilePath {
+//}
 
-
+- (void)zipArchiveDidUnzipArchiveAtPath:(NSString *)path zipInfo:(unz_global_info)zipInfo unzippedPath:(NSString *)unzippedPath {
+    NSLog(@"---> path:%@,  unzippedPath:%@",path, unzippedPath);
+    
+    NSArray *unzippedFiles = [FileManager fileContentsOfFileURL:[NSURL fileURLWithPath:unzippedPath]];
+    [unzippedFiles enumerateObjectsUsingBlock:^(NSURL * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([TreeNode.VedioTypes containsObject:obj.pathExtension.uppercaseString]) {
+            if ([FileManager hiddenFileURL:obj]){
+                NSLog(@"文件已隐藏");
+            };
+            *stop = YES;
+        }
+    }];
+    
+    self.liveResource = [FileManager fileContentsOfFileURL:[NSURL fileURLWithPath:unzippedPath]];
+}
 
 @end
