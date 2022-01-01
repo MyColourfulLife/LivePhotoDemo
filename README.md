@@ -1,5 +1,3 @@
-# Live Photo 技术方案V1.0
-
 ## 一、何为Live Photo？
 
 一句话概括：**<u>栩栩如生的照片</u>**
@@ -35,110 +33,11 @@ https://developer.apple.com/design/human-interface-guidelines/live-photos/overvi
 
 **总结：苹果建议在不支持的环境（平台中）显示为普通照片。**
 
-## 二、 live photo 支持情况调研
+## 二、 开发建议
 
-以下数据截止2021.11.27日（大部分应用不支持live photo）
-
-- 微信、QQ： 不支持live photo
-- 微博：iOS支持，安卓不支持
-- 百度网盘：iOS支持；安卓支持查看live效果；网页端及桌面端 仅支持查看静态图。
-- 阿里云盘：iOS支持，安卓端、网页端及桌面端仅支持 查看静态图。
-
-百度网盘及阿里云盘详细对比如下：
-
-![image-20211127142129890](http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/marketPreview.png)
-
-
-
-## 三、 我们的方案
-
-### 开发建议及方案
-
-以下只是开发建议的原则，产品及设计可供参考
+以下只是开发建议的原则
 
 1. <u>遵循Apple 设计指南，在不支持的环境下 使用静态图展示，且不展示 live 徽章</u>
 2. <u>跨平台兼容性：live photo 在夸平台分享时，应使用其他平台支持的图片格式，比如jpg</u>
 
-开发认为，遵循以上的原则进行产品设计，可减少许多不必要的问题。
-
- 由此可以得出建议：建议 安卓端 及 桌面端 可不支持 live 效果的展示，但Apple用户尽可能全量支持
-
-<u>假如需要安卓端 及 其他平台支持，也是有方案的</u>：
-
-iOS端会将 live photo包含的资源 图片及视频，上传到sever，
-
-其他端可以获取到照片及视频，然后使用这两个资源去模拟live效果。
-
-但这一点违背了Apple的设计理念：
-
-> **Display Live Photos as traditional photos in environments that don’t support Live Photos.** Don’t attempt to replicate the Live Photos experience provided in a supported environment. Instead, show a traditional, still representation of the photo.
-
-对于网页版是可以支持live效果的：
-
-<u>网页端解决方案</u>：
-
-使用LivePhotosKit JS：https://developer.apple.com/documentation/livephotoskitjs?language=objc
-
-Demo：https://developer.apple.com/live-photos/
-
----
-
-### <u>iOS 端方案及Demo</u>
-
-#### 1. live photo 传什么给 server
-
-Live Photo 必要的两个资源文件：图片和视频。
-
-鉴于尽可能不变动iOS已有的上传任务的代码，开发建议采用 百度云 的解决方案
-
-**将 图片 和 视频 打包成一个 live photo 资源文件，上传到我们的server端。** 
-
-打包方案： 使用 zip 压缩 ，使用特定的后缀名。百度云使用的后缀名为 livp，
-
-这里我们直接使用.live 作为后缀名。后面提到的 live photo 后缀，将统一使用 .live 后缀。具体定义 可有产品确定。
-
-#### 2. 如何展示云端相册的live photo
-
-从server 端获取 live photo 所必须的资源文件，在本地合成 live photo 对象，进行展示。
-
-#### 3. 如何保存到本地相册
-
-从server 端获取 live photo 所必须的资源文件，在本地合成 live photo Asset，存储到相册
-
-#### 4.分享什么到其他平台
-
-为了跨平台兼容性，让其他不支持live photo的应用可以查看图片，使用从server端获取到的静态图片，进行分享
-
-
-
-demo效果:http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/demoReview.MP4
-
-<video src="http://192.168.24.11/huangjiashu/livephotodemo/wikis/resources/demoReview.MP4"></video>
-
-
-
-demo地址：http://192.168.24.11/huangjiashu/livephotodemo.git
-
-Demo 至少包含了以下主要操作：
-
-1. live photo的效果展示
-2. Live photo 资源的打包
-3. Live photo 资源的解压及 live photo的 合成
-4. live photo 资源保存到相册
-5. Live photo 分享至其他应用
-
-
-
-
-
-### <u>需要Server端的技术支持</u>
-
-要处理 live photo资源文件。
-
-- 在不支持live photo的平台上，需要返回 缩略图、图片资源
-
-- 在支持live photo的平台上，需要返回 缩略图、图片资源+视频资源
-
-
-.live 是我们约定的 live photo 资源格式，server在收到 .live格式的文件后，要认为它是一个图片，是一种 live photo的图片，需要为其生成缩略图。
-
+遵循以上的原则进行产品设计，可减少许多不必要的问题。
